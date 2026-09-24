@@ -1,0 +1,23 @@
+/* The employee and month at the top of the popup */
+.edit-payroll-who {
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  background: var(--page-background);
+}
+
+/* The total preview: "Total salary  $1,750.50" */
+.payroll-total-preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  background: var(--light-purple);
+}
+
+.payroll-total-preview strong {
+  font-size: 20px;
+  color: var(--main-purple);
+}

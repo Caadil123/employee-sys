@@ -1,0 +1,35 @@
+/* Styles used by the whole app */
+
+/* Our colours in one place. Change a colour here and it changes everywhere. */
+:root {
+  --main-purple: #6563d6;
+  --dark-purple: #4f4dc2;
+  --light-purple: #eeeefc;
+  --page-background: #f4f5fb;
+  --card-background: #ffffff;
+  --text-dark: #2d2d3a;
+  --text-grey: #8a8a9e;
+  --border-grey: #e3e4ee;
+  --error-red: #e5484d;
+  --error-background: #fdecec;
+  --success-green: #6cc24a;
+}
+
+/* Make width and height include padding and border (easier to size things) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: var(--text-dark);
+  background: var(--page-background);
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}

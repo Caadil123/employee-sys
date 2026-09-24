@@ -1,0 +1,32 @@
+/* Styles ONLY for the Users page.
+   The shared styles (card, toolbar, DataTable, badges, buttons) are in src/styles/TablePage.css */
+
+/* Column 3 (Email) in grey */
+.users-page table.data-table > tbody > tr > td:nth-child(3) {
+  color: var(--text-grey);
+}
+
+/* Column 6 (Created Date) a bit bold */
+.users-page table.data-table > tbody > tr > td:nth-child(6) {
+  font-weight: 600;
+}
+
+/* ---------- Role badges ---------- */
+.role-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.role-admin {
+  color: var(--main-purple);
+  background: var(--light-purple);
+}
+
+.role-user {
+  color: #3f8f2a;
+  background: #eaf6e4;
+}

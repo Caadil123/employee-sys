@@ -1,0 +1,33 @@
+/* Styles ONLY for the Payroll page.
+   The shared styles (card, toolbar, DataTable, badges, buttons) are in src/styles/TablePage.css */
+
+/* The department, small and grey under the employee name */
+.department-text {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-grey);
+}
+
+/* Month column (3) a bit bold */
+.payroll-page table.data-table > tbody > tr > td:nth-child(3) {
+  font-weight: 600;
+}
+
+/* ---------- Payroll status badges ---------- */
+/* Pending = orange (waiting for approval) */
+.status-pending {
+  color: #c77c00;
+}
+
+/* Approved = green */
+.status-approved {
+  color: #3f8f2a;
+}
+
+/* "🔒 Locked" text instead of buttons on approved payroll */
+.locked-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-grey);
+}
+

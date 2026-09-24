@@ -1,0 +1,9 @@
+/* The round avatar with initials */
+.user-avatar {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0; /* never squeeze the circle */
+  border-radius: 50%;
+  font-weight: 800;
+  color: white;
+}

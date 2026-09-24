@@ -1,0 +1,38 @@
+/* Styles ONLY for the Employees page.
+   The shared styles (card, toolbar, DataTable, badges, buttons) are in src/styles/TablePage.css */
+
+/* The job title, small and grey under the name */
+.job-title-text {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--text-grey);
+}
+
+/* Contact column: phone on top, email under it (like the design) */
+.phone-text {
+  font-weight: 600;
+}
+
+.email-text {
+  margin-top: 2px;
+  font-size: 14px;
+  color: var(--text-grey);
+}
+
+/* Column 3 (Department) and column 7 (Hire Date) a bit bold, like the design */
+.employees-page table.data-table > tbody > tr > td:nth-child(3),
+.employees-page table.data-table > tbody > tr > td:nth-child(7) {
+  font-weight: 600;
+}
+
+/* "Not set" in red for old employees without a base salary */
+.salary-missing {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--error-red);
+}
+
+/* A $0.00 bonus in grey, so real bonuses stand out */
+.bonus-zero {
+  color: var(--text-grey);
+}

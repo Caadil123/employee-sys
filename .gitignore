@@ -1,0 +1,10 @@
+# Secret settings (passwords). Never push these.
+.env
+
+# Python virtual environment and cache files
+venv/
+__pycache__/
+
+# Frontend packages (we install them again with "npm install")
+node_modules/
+dist/

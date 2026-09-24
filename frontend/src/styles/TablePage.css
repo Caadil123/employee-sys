@@ -1,0 +1,323 @@
+/* Shared styles for pages that show a DataTable inside a white card
+   (the Users page and the Employees page).
+   Each page imports this file, and keeps only its own special styles in its own CSS file. */
+
+/* ---------- Breadcrumb: "Home > Users" ---------- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.breadcrumb a {
+  color: var(--main-purple);
+  text-decoration: none;
+}
+
+.breadcrumb-arrow {
+  color: var(--text-grey);
+}
+
+/* ---------- The white card ---------- */
+.table-card {
+  padding: 28px;
+  border-radius: 4px;
+  background: var(--card-background);
+  box-shadow: 0 2px 12px rgba(45, 45, 58, 0.06);
+}
+
+.table-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-grey);
+}
+
+/* "COMPANY USERS" and "COMPANY EMPLOYEES" in capital letters, like the design */
+.table-card-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.table-count {
+  font-size: 14px;
+  color: var(--text-grey);
+}
+
+/* Loading / error / empty messages */
+.table-message {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-grey);
+}
+
+.table-error {
+  color: var(--error-red);
+}
+/* ---------- The DataTable ----------
+   DataTables brings its own styles. Here we change them to match our design.
+   ".table-card" at the start makes our rules stronger than the DataTables rules. */
+
+/* Rows above and below the table: "Show X entries" + search, and page info + page buttons */
+.table-card .dt-layout-row {
+  margin: 14px 0;
+}
+
+/* Let the table scroll sideways on small screens instead of breaking the page */
+.table-card .dt-layout-table .dt-layout-cell {
+  overflow-x: auto;
+}
+
+/* The search box */
+.table-card .dt-search input {
+  width: 240px;
+  margin-left: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--border-grey);
+  border-radius: 4px;
+  outline: none;
+  background: white;
+}
+
+.table-card .dt-search input:focus {
+  border-color: var(--main-purple);
+  box-shadow: 0 0 0 3px var(--light-purple);
+}
+
+/* The "Show 10 entries" dropdown */
+.table-card .dt-length select {
+  margin-right: 6px;
+  padding: 6px 8px;
+  border: 1px solid var(--border-grey);
+  border-radius: 4px;
+  background: white;
+}
+
+.table-card .dt-length,
+.table-card .dt-info {
+  font-size: 14px;
+  color: var(--text-grey);
+}
+
+/* The table itself */
+.table-card table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* The header row: light grey background, bold text, left-aligned (also the ID column) */
+.table-card table.data-table > thead > tr > th {
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: none;
+  background: var(--page-background);
+}
+
+/* DataTables puts the sort arrows on the left for number columns. Keep them on the right. */
+.table-card table.data-table > thead > tr > th div.dt-column-header {
+  flex-direction: row;
+}
+
+.table-card table.data-table > tbody > tr > td {
+  padding: 18px 16px;
+  text-align: left;
+  white-space: nowrap;
+  border-top: none;
+  border-bottom: 1px solid var(--border-grey);
+}
+
+/* Light highlight when the mouse is over a row */
+.table-card table.data-table > tbody > tr:hover > td {
+  background: #fafaff;
+}
+
+/* The first column (ID) in bold */
+.table-card table.data-table > tbody > tr > td:first-child {
+  font-weight: 700;
+}
+
+/* "No matching rows found" message */
+.table-card table.data-table td.dt-empty {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-grey);
+}
+
+/* The page buttons: 1 2 3 ... */
+.table-card .dt-paging .dt-paging-button {
+  min-width: 36px;
+  padding: 6px 10px;
+  margin-left: 4px;
+  border: 1px solid var(--border-grey) !important;
+  border-radius: 4px;
+  color: var(--text-dark) !important;
+  background: white !important;
+}
+
+.table-card .dt-paging .dt-paging-button:hover:not(.disabled) {
+  background: var(--light-purple) !important;
+}
+
+/* The page we are on: purple */
+.table-card .dt-paging .dt-paging-button.current {
+  border-color: var(--main-purple) !important;
+  color: white !important;
+  background: var(--main-purple) !important;
+}
+
+/* "Previous" / "Next" when there is no page to go to */
+.table-card .dt-paging .dt-paging-button.disabled {
+  opacity: 0.4;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Purple names, like the design */
+.name-text {
+  font-weight: 600;
+  color: var(--main-purple);
+}
+
+/* ---------- Toolbar: status filter + Add button ---------- */
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.status-filter {
+  min-width: 160px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-grey);
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.add-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  color: white;
+  background: var(--main-purple);
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: var(--dark-purple);
+}
+
+/* Green message after an action */
+.success-message {
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3f8f2a;
+  background: #eaf6e4;
+}
+
+/* ---------- Status badges ---------- */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* A small coloured dot before the word */
+.status-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-active {
+  color: #3f8f2a;
+}
+
+.status-inactive {
+  color: var(--error-red);
+}
+
+/* Inactive rows look faded */
+.inactive-row td {
+  opacity: 0.55;
+}
+
+/* ...but their buttons stay clear, so the admin can activate them */
+.inactive-row td:last-child {
+  opacity: 1;
+}
+
+/* ---------- Action buttons in each row ---------- */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-button,
+.deactivate-button,
+.activate-button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  background: white;
+  cursor: pointer;
+}
+
+.edit-button {
+  border: 1px solid var(--main-purple);
+  color: var(--main-purple);
+}
+
+.edit-button:hover {
+  background: var(--light-purple);
+}
+
+.deactivate-button {
+  border: 1px solid var(--error-red);
+  color: var(--error-red);
+}
+
+.deactivate-button:hover {
+  background: var(--error-background);
+}
+
+.activate-button {
+  border: 1px solid #3f8f2a;
+  color: #3f8f2a;
+}
+
+.activate-button:hover {
+  background: #eaf6e4;
+}
+
+.you-label {
+  padding: 0 12px;
+  font-size: 13px;
+  color: var(--text-grey);
+}

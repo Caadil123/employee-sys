@@ -1,0 +1,139 @@
+/* The dark see-through background that covers the whole page */
+.modal-background {
+  position: fixed;
+  inset: 0; /* top, right, bottom and left = 0: cover everything */
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(30, 30, 45, 0.45);
+}
+
+/* The white box in the middle */
+.modal-box {
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto; /* scroll inside the box if it is too tall */
+  padding: 28px;
+  border-radius: 8px;
+  background: var(--card-background);
+  box-shadow: 0 12px 40px rgba(30, 30, 45, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.modal-close-button {
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--text-grey);
+  background: none;
+  cursor: pointer;
+}
+
+.modal-close-button:hover {
+  color: var(--text-dark);
+}
+
+/* ---------- Shared styles for forms and buttons inside popups ---------- */
+.modal-box label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--border-grey);
+  border-radius: 4px;
+  outline: none;
+  background: white;
+}
+
+.modal-box input:focus,
+.modal-box select:focus {
+  border-color: var(--main-purple);
+  box-shadow: 0 0 0 3px var(--light-purple);
+}
+
+/* Small grey help text under a field */
+.field-hint {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text-grey);
+}
+
+.form-field {
+  margin-bottom: 18px;
+}
+
+/* Red box for errors */
+.modal-error {
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--error-red);
+  background: var(--error-background);
+}
+
+/* The buttons at the bottom (Cancel + Save) */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.cancel-button,
+.save-button,
+.danger-button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cancel-button {
+  border: 1px solid var(--border-grey);
+  color: var(--text-dark);
+  background: white;
+}
+
+.save-button {
+  border: none;
+  color: white;
+  background: var(--main-purple);
+}
+
+.save-button:hover {
+  background: var(--dark-purple);
+}
+
+.danger-button {
+  border: none;
+  color: white;
+  background: var(--error-red);
+}
+
+/* Grey and not clickable while saving */
+.save-button:disabled,
+.danger-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
